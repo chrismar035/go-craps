@@ -3,8 +3,8 @@ package craps
 import "math"
 
 type PlayerBet struct {
-	amount int
-	bet Bet
+	Amount int
+	Bet Bet
 }
 
 type Bet struct {
@@ -13,16 +13,16 @@ type Bet struct {
 }
 
 func (b PlayerBet) Winnings() int {
-	odds := float64(b.bet.toPay) / float64(b.bet.base)
-	return int(math.Floor(float64(b.amount) * odds))
+	odds := float64(b.Bet.toPay) / float64(b.Bet.base)
+	return int(math.Floor(float64(b.Amount) * odds))
 }
 
-func (b PlayerBet) toPay() int { return b.bet.toPay }
-func (b PlayerBet) base() int { return b.bet.base }
+func (b PlayerBet) toPay() int { return b.Bet.toPay }
+func (b PlayerBet) base() int { return b.Bet.base }
 
 
-var passLineOdds =			Bet{1, 1}
-var fourTenPassLineOdds =	Bet{2, 1}
-var fourTenPlaceOdds =		Bet{9, 5}
-var fiveNineOdds =			Bet{3 ,2}
-var sixEightOdds =			Bet{6, 5}
+var PassLineOdds =			Bet{1, 1}
+var FourTenPassLineOdds =	Bet{2, 1}
+var FourTenPlaceOdds =		Bet{9, 5}
+var FiveNineOdds =			Bet{3 ,2}
+var SixEightOdds =			Bet{6, 5}
