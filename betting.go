@@ -17,8 +17,8 @@ func (b PlayerBet) Winnings() int {
 	return int(math.Floor(float64(b.Amount) * odds))
 }
 
-func (b PlayerBet) toPay() int { return b.Bet.toPay }
-func (b PlayerBet) base() int { return b.Bet.base }
+func (b PlayerBet) ToPay() int { return b.Bet.toPay }
+func (b PlayerBet) Base() int { return b.Bet.base }
 
 
 var PassLineOdds =			Bet{1, 1}
